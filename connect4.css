@@ -1,0 +1,127 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+:root{
+  --main-bg-color: #D7E9B9;
+  --secondary-color: #FFFBAC;
+  --third-color: #FFE0B3;
+  --fourth-color: #FAAB78;
+  --winning-screen-color: #FFF;
+  --main-screen-text:#6b6b6b;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  gap: 20px;
+  background-color: var(--main-bg-color);
+}
+#winningScreen{
+  display:none;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 1;
+  gap: 5px;
+}
+#winningScreen > h1{
+  font-size: 3rem;
+  text-align: center;
+  height: 3.5rem;
+  border-radius: .5rem;
+  color: var(--winning-screen-color);
+}
+button{
+  width: 6rem;
+  height: 2rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--main-screen-text);
+}
+button:hover{
+  cursor: pointer;
+  filter: brightness(70%);
+  transition: .2s;
+  transform: scale(1.05);
+}
+header{
+  position: fixed;
+  display: block;
+  top: 0;
+  width: 100vw;
+  text-align: center;
+}
+header > h1{
+  font-size: 4rem;
+  margin-bottom: .5rem;
+  color: var(--main-screen-text);
+}
+header > button{
+  margin-bottom: .5rem;
+}
+header > p{
+  font-size: 2rem;
+  color: var(--main-screen-text);
+}
+main{
+  display:block;
+  margin: auto;
+}
+#gameBoardCon{
+  display: grid;
+  grid-template-columns: repeat(7,3rem);
+  border: 7px solid var(--winning-screen-color);
+  gap: .5rem;
+  justify-content: center;
+  align-items: center;
+  width: 25.5rem;
+  background-color: var(--secondary-color);
+  padding: .3rem;
+  border-radius: 2rem;
+}
+#gameBoardCon > * {
+  border-radius: 2rem;
+  background-color: var(--main-bg-color);
+}
+.empty{
+  width: 3rem;
+  height: 3rem;
+}
+.empty:hover{
+  cursor: pointer;
+}
+.highLight{
+  filter: brightness(70%)
+}
+footer{
+  position: fixed;
+  width: 100vw;
+  text-align: center;
+  bottom:0;
+  color: var(--main-screen-text);
+}
